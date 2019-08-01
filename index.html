@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog N2Y</title>
+    <link rel="stylesheet" href="css/css.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    
+    <script>
+    $(function(){
+        $("#seta").hide();
+        
+        $(window).scroll(
+            
+            
+            function(e){
+                
+                if( $(this).scrollTop() > 50 ){
+                    $("#seta").fadeIn();
+                    $("#base-menu").addClass("Menu-part-2");
+                    $("#base-menu").removeClass("Menu-part-1");
+                }
+                
+                if( $(this).scrollTop() < 50 ){
+                    $("#seta").fadeOut();
+                    $("#base-menu").removeClass("Menu-part-2");
+                    $("#base-menu").addClass("Menu-part-1");
+                }
+            }
+        );
+        
+        $("#seta").click(
+        
+            function(e){
+                $("html, body").animate(
+                    {scrollTop: 0},300
+                );
+            }
+            
+        );
+        
+        $('a[href^="#"]').on('click',function(event){
+            var target = $(this.getAttribute('href'));
+            
+            if(target.length){
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 500);
+            }
+        });
+    });
+    </script>
+    
+    <link rel="icon" href="img/seta.png" type="image/png" sizes="16x16">
+</head>
+<body>
+    <header>
+        <div id="bannerFull">
+            <nav id="base-menu" class="Menu-part-1">
+                <ul id="Menu">
+                    <li>
+                        <a href="#">
+                            <img src="img/logotipo.png" alt="Agência Next 2 You - Sempre ao seu lado">
+                        </a>
+                    </li>
+                    <li><a href="#QuemSomos">Quem Somos</a></li>
+                    <li><a href="#PostsRecentes">Posts Recentes</a></li>
+                    <li><a href="#AcessoRestrito">Acesso Restrito</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="QuemSomos">
+        <h1>Quem Somos</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ipsa beatae ab quam, voluptates tenetur aliquid dignissimos eveniet, harum consequatur inventore veniam quisquam numquam dolore assumenda illo earum officia minima.</p>
+    </section>
+    <section id="PostsRecentes">
+        <h1>Posts Recentes</h1>
+        <article>
+            <h2>Tema</h2>
+            <p>Titulo</p>
+            <img src="" alt="">
+            <a href="#" class="btn">Ver</a>
+        </article>
+        <article>
+            <h2>Tema</h2>
+            <p>Titulo</p>
+            <img src="" alt="">
+            <a href="#" class="btn">Ver</a>
+        </article>
+        <article>
+            <h2>Tema</h2>
+            <p>Titulo</p>
+            <img src="" alt="">
+            <a href="#" class="btn">Ver</a>
+        </article>
+    </section>
+    
+    
+    
+    
+    
+    <div id="seta"><img src="img/seta.png" alt="Seta"></div>
+</body>
+</html>
