@@ -8,18 +8,10 @@ $(function(){
 
             if( $(this).scrollTop() > 50 ){
                 $("#seta").fadeIn();
-                $("#seta").animate({
-                    right: 0,
-                    bottom: 0,
-                    width: 100,
-                    height: 50,
-                    backgroundColor: "dddddd"
-                })
             }
 
             if( $(this).scrollTop() < 50 ){
                 $("#seta").fadeOut();
-               
             }
         }
     );
